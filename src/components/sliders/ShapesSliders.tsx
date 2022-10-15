@@ -1,10 +1,10 @@
-import Slider from '@react-native-community/slider';
 import React, {Dispatch, SetStateAction} from 'react';
 import {View} from 'react-native';
 import {globalStyles} from '../../styles/Styles';
 import {ShapeRange} from '../../types/ShapeRangeTypes';
+import SliderUI from '../../ui/SliderUI';
 import TextUI from '../../ui/TextUI';
-import {surfboardSliderStyles as styles} from './SurfboardSliderStyles';
+import {sliderStyles as styles} from './SliderStyles';
 
 interface Props {
   shapeRange: ShapeRange[];
@@ -15,20 +15,14 @@ interface Props {
 const ShapesSlider = ({shapeRange, value, setValue}: Props) => {
   return (
     <View style={globalStyles.marginTop20}>
-      <View style={styles.sizeContainer}>
+      <View style={styles.textContainer}>
         <TextUI style={styles.minMaxSize}>{shapeRange[0].name}</TextUI>
         <TextUI style={styles.minMaxSize}>{shapeRange[4].name}</TextUI>
       </View>
-      <Slider
-        tapToSeek
+      <SliderUI
         value={value}
-        step={1}
-        style={styles.slider}
         onValueChange={setValue}
-        minimumValue={0}
         maximumValue={shapeRange.length - 1}
-        minimumTrackTintColor="#000000"
-        maximumTrackTintColor="#000000"
       />
       <TextUI style={[styles.minMaxSize, globalStyles.textAlignCenter]}>
         {shapeRange[2].name}

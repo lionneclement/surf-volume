@@ -1,15 +1,11 @@
 import {StyleSheet} from 'react-native';
 
-export const surfboardSliderStyles = StyleSheet.create({
-  slider: {
-    width: 300,
-    height: 50,
-  },
+export const sliderStyles = StyleSheet.create({
   title: {
     fontFamily: 'Jost-Bold',
     fontSize: 21,
   },
-  sizeContainer: {
+  textContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },

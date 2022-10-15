@@ -1,10 +1,10 @@
-import Slider from '@react-native-community/slider';
 import React, {Dispatch, SetStateAction} from 'react';
 import {View} from 'react-native';
 import {globalStyles} from '../../styles/Styles';
 import {SizeRange} from '../../types/SizeRangeTypes';
+import SliderUI from '../../ui/SliderUI';
 import TextUI from '../../ui/TextUI';
-import {surfboardSliderStyles as styles} from './SurfboardSliderStyles';
+import {sliderStyles as styles} from './SliderStyles';
 
 interface Props {
   title: string;
@@ -17,7 +17,7 @@ const SizeSlider = ({title, sizeRange, value, setValue}: Props) => {
   return (
     <View style={globalStyles.marginTop15}>
       <TextUI style={styles.title}>{title}</TextUI>
-      <View style={styles.sizeContainer}>
+      <View style={styles.textContainer}>
         <TextUI style={styles.minMaxSize}>{sizeRange[0].feetInches}</TextUI>
         <TextUI style={styles.currentSize}>
           {sizeRange[value].feetInches}
@@ -26,16 +26,10 @@ const SizeSlider = ({title, sizeRange, value, setValue}: Props) => {
           {sizeRange[sizeRange.length - 1].feetInches}
         </TextUI>
       </View>
-      <Slider
-        tapToSeek
+      <SliderUI
         value={value}
-        step={1}
-        style={styles.slider}
         onValueChange={setValue}
-        minimumValue={0}
         maximumValue={sizeRange.length - 1}
-        minimumTrackTintColor="#000000"
-        maximumTrackTintColor="#000000"
       />
     </View>
   );

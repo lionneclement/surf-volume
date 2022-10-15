@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
-import ShapesSlider from '../components/sliders/ShapesSlider';
-import SizeSlider from '../components/sliders/SizeSlider';
+import ShapesSlider from '../components/sliders/ShapesSliders';
+import SizeSlider from '../components/sliders/SizeSliders';
 import {lengthRange} from '../data/LengthRangeData';
 import {shapesRange} from '../data/ShapesRangeData';
 import {thicknessRange} from '../data/ThicknessRangeData';
 import {widthRange} from '../data/WidthRangeData';
-import {globalStyles} from '../styles/Styles';
 import ScrollViewUI from '../ui/ScrollViewUI';
 import TextUI from '../ui/TextUI';
 import TitleUI from '../ui/TitleUI';
@@ -63,15 +62,8 @@ const Home = () => {
             value={shape}
           />
         </View>
-        <View
-          style={{
-            borderBottomColor: '#000000',
-            borderBottomWidth: 1,
-          }}
-        />
-        <TextUI style={[styles.liters, globalStyles.marginTop15]}>
-          {volume} LITERS
-        </TextUI>
+        <View style={styles.line} />
+        <TextUI style={styles.liters}>{volume} LITERS</TextUI>
       </ScrollViewUI>
     </SafeAreaView>
   );
@@ -82,6 +74,12 @@ const styles = StyleSheet.create({
     fontFamily: 'Jost-Medium',
     fontSize: 27,
     textAlign: 'center',
+  },
+  line: {
+    marginVertical: 30,
+    width: 300,
+    borderBottomColor: 'black',
+    borderBottomWidth: StyleSheet.hairlineWidth,
   },
 });
 
