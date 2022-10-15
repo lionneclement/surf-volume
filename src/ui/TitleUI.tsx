@@ -1,12 +1,15 @@
-import {ReactNode} from 'react';
-import React, {StyleSheet, TextProps} from 'react-native';
+import {FunctionComponent, ReactElement, ReactNode} from 'react';
+import React, {StyleSheet, TextProps, TextStyle, ViewStyle} from 'react-native';
 import TextUI from './TextUI';
 
 interface Props extends TextProps {
   children: ReactNode;
 }
 
-const TitleUI = ({children, ...props}: Props) => {
+const TitleUI: FunctionComponent<Props> = ({
+  children,
+  ...props
+}: Props): ReactElement => {
   return (
     <TextUI style={styles.title} {...props}>
       {children}
@@ -14,7 +17,7 @@ const TitleUI = ({children, ...props}: Props) => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles: {[key: string]: ViewStyle | TextStyle} = StyleSheet.create({
   title: {
     fontFamily: 'Jost-Medium',
     fontSize: 35,

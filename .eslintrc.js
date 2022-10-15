@@ -10,6 +10,18 @@ module.exports = {
         '@typescript-eslint/no-shadow': ['error'],
         'no-shadow': 'off',
         'no-undef': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'error',
+        '@typescript-eslint/typedef': [
+          'error',
+          {
+            allowExpressions: true,
+            arrowParameter: true,
+            variableDeclaration: true,
+            memberVariableDeclaration: true,
+            parameter: true,
+            propertyDeclaration: true,
+          },
+        ],
       },
     },
   ],

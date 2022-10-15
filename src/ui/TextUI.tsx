@@ -1,11 +1,14 @@
-import React, {ReactNode} from 'react';
-import {StyleSheet, Text, TextProps} from 'react-native';
+import React, {FunctionComponent, ReactElement, ReactNode} from 'react';
+import {StyleSheet, Text, TextProps, TextStyle, ViewStyle} from 'react-native';
 
 interface Props extends TextProps {
   children: ReactNode;
 }
 
-const TextUI = ({children, ...props}: Props) => {
+const TextUI: FunctionComponent<Props> = ({
+  children,
+  ...props
+}: Props): ReactElement => {
   return (
     <Text style={styles.text} {...props}>
       {children}
@@ -13,7 +16,7 @@ const TextUI = ({children, ...props}: Props) => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles: {[key: string]: ViewStyle | TextStyle} = StyleSheet.create({
   text: {
     fontFamily: 'Jost-Regular',
     color: 'black',

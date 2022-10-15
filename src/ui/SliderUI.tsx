@@ -1,10 +1,12 @@
 import Slider, {SliderProps} from '@react-native-community/slider';
-import React from 'react';
-import {StyleSheet} from 'react-native';
+import React, {FunctionComponent, ReactElement} from 'react';
+import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
-const trackTintColor = '#000000';
+const trackTintColor: string = '#000000';
 
-const SliderUI = ({...props}: SliderProps) => {
+const SliderUI: FunctionComponent<SliderProps> = ({
+  ...props
+}: SliderProps): ReactElement => {
   return (
     <Slider
       tapToSeek
@@ -18,7 +20,7 @@ const SliderUI = ({...props}: SliderProps) => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles: {[key: string]: ViewStyle | TextStyle} = StyleSheet.create({
   slider: {
     width: 300,
     height: 50,

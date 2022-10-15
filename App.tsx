@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {FunctionComponent, ReactElement} from 'react';
 import Home from './src/views/Home';
 
-const App = () => {
+const App: FunctionComponent = (): ReactElement => {
   return <Home />;
 };
 

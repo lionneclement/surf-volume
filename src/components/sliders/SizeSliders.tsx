@@ -1,4 +1,9 @@
-import React, {Dispatch, SetStateAction} from 'react';
+import React, {
+  Dispatch,
+  FunctionComponent,
+  ReactElement,
+  SetStateAction,
+} from 'react';
 import {View} from 'react-native';
 import {globalStyles} from '../../styles/Styles';
 import {SizeRange} from '../../types/SizeRangeTypes';
@@ -13,7 +18,12 @@ interface Props {
   setValue: Dispatch<SetStateAction<number>>;
 }
 
-const SizeSlider = ({title, sizeRange, value, setValue}: Props) => {
+const SizeSlider: FunctionComponent<Props> = ({
+  title,
+  sizeRange,
+  value,
+  setValue,
+}: Props): ReactElement => {
   return (
     <View style={globalStyles.marginTop15}>
       <TextUI style={styles.title}>{title}</TextUI>

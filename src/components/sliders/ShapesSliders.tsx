@@ -1,4 +1,9 @@
-import React, {Dispatch, SetStateAction} from 'react';
+import React, {
+  Dispatch,
+  FunctionComponent,
+  ReactElement,
+  SetStateAction,
+} from 'react';
 import {View} from 'react-native';
 import {globalStyles} from '../../styles/Styles';
 import {ShapeRange} from '../../types/ShapeRangeTypes';
@@ -12,7 +17,11 @@ interface Props {
   setValue: Dispatch<SetStateAction<number>>;
 }
 
-const ShapesSlider = ({shapeRange, value, setValue}: Props) => {
+const ShapesSlider: FunctionComponent<Props> = ({
+  shapeRange,
+  value,
+  setValue,
+}: Props): ReactElement => {
   return (
     <View style={globalStyles.marginTop20}>
       <View style={styles.textContainer}>
