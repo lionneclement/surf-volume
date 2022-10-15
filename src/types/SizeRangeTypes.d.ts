@@ -1,4 +1,4 @@
-export interface SurfboardSizeRange {
+export interface SizeRange {
   feetInches: string;
   cm: number;
 }

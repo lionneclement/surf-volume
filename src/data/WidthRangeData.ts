@@ -1,6 +1,6 @@
-import {SurfboardSizeRange} from '../types/SurfboardSizeRange';
+import {SizeRange} from '../types/SizeRangeTypes';
 
-export const surfboardWidthRange: SurfboardSizeRange[] = [
+export const widthRange: SizeRange[] = [
   {feetInches: '17″', cm: 43.1},
   {feetInches: '17 ¼”', cm: 43.8},
   {feetInches: '17 ½″', cm: 44.4},
