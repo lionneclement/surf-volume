@@ -11,16 +11,16 @@ import TextUI from '../ui/TextUI';
 import TitleUI from '../ui/TitleUI';
 
 const Home = () => {
-  const [length, setLength] = useState<number>(
-    Math.floor(lengthRange.length / 2),
-  );
-  const [width, setWidth] = useState<number>(Math.floor(widthRange.length / 2));
-  const [thickness, setThickness] = useState<number>(
-    Math.floor(thicknessRange.length / 2),
-  );
-  const [shape, setShape] = useState<number>(
-    Math.floor(shapesRange.length / 2),
-  );
+  const lengthMiddleValue = Math.floor(lengthRange.length / 2);
+  const widthMiddleValue = Math.floor(widthRange.length / 2);
+  const thicknessMiddleValue = Math.floor(thicknessRange.length / 2);
+  const shapesMiddleValue = Math.floor(shapesRange.length / 2);
+  
+
+  const [length, setLength] = useState<number>(lengthMiddleValue);
+  const [width, setWidth] = useState<number>(widthMiddleValue);
+  const [thickness, setThickness] = useState<number>(thicknessMiddleValue);
+  const [shape, setShape] = useState<number>(shapesMiddleValue);
   const [volume, setVolume] = useState<string>('');
 
   useEffect(() => {
