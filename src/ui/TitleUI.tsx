@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Jost-Medium',
     fontSize: 35,
     textAlign: 'center',
+    lineHeight: 40,
   },
 });
 

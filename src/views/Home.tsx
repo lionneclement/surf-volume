@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   line: {
-    marginVertical: 30,
+    marginVertical: 20,
     width: 300,
     borderBottomColor: 'black',
     borderBottomWidth: StyleSheet.hairlineWidth,
