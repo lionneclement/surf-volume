@@ -9,28 +9,29 @@ import {widthRange} from '../data/WidthRangeData';
 import ScrollViewUI from '../ui/ScrollViewUI';
 import TextUI from '../ui/TextUI';
 import TitleUI from '../ui/TitleUI';
+import {volumeCalculator} from '../utils/VolumeCalculator';
 
 const Home = () => {
   const lengthMiddleValue = Math.floor(lengthRange.length / 2);
   const widthMiddleValue = Math.floor(widthRange.length / 2);
   const thicknessMiddleValue = Math.floor(thicknessRange.length / 2);
   const shapesMiddleValue = Math.floor(shapesRange.length / 2);
-  
 
   const [length, setLength] = useState<number>(lengthMiddleValue);
   const [width, setWidth] = useState<number>(widthMiddleValue);
   const [thickness, setThickness] = useState<number>(thicknessMiddleValue);
   const [shape, setShape] = useState<number>(shapesMiddleValue);
-  const [volume, setVolume] = useState<string>('');
+  const [volume, setVolume] = useState<number>(0);
 
   useEffect(() => {
-    const dimensions =
-      lengthRange[length].cm *
-      widthRange[width].cm *
-      thicknessRange[thickness].cm;
+    const newVolume = volumeCalculator({
+      length: lengthRange[length].cm,
+      width: widthRange[width].cm,
+      thickness: thicknessRange[thickness].cm,
+      shapeValue: shapesRange[shape].value,
+    });
 
-    const newVolume = (dimensions * shapesRange[shape].value) / 1000;
-    setVolume(newVolume.toFixed(1));
+    setVolume(newVolume);
   }, [length, width, thickness, shape]);
 
   return (
