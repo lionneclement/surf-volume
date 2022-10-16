@@ -19,6 +19,8 @@ const ScrollViewUI: FunctionComponent<Props> = ({
     <ScrollView
       bounces={false}
       contentContainerStyle={styles.container}
+      showsHorizontalScrollIndicator={false}
+      showsVerticalScrollIndicator={false}
       {...props}>
       {children}
     </ScrollView>

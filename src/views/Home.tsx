@@ -11,6 +11,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
+import {Divider} from 'react-native-paper';
 import ShapesSlider from '../components/sliders/ShapesSliders';
 import SizeSlider from '../components/sliders/SizeSliders';
 import {lengthRange} from '../data/LengthRangeData';
@@ -75,7 +76,7 @@ const Home: FunctionComponent = (): ReactElement => {
             value={shape}
           />
         </View>
-        <View style={styles.line} />
+        <Divider style={styles.line} />
         <TextUI style={styles.liters}>{volume} LITERS</TextUI>
       </ScrollViewUI>
     </SafeAreaView>
@@ -91,8 +92,7 @@ const styles: {[key: string]: ViewStyle | TextStyle} = StyleSheet.create({
   line: {
     marginVertical: 20,
     width: 300,
-    borderBottomColor: 'black',
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    height: 1,
   },
 });
 
