@@ -30,6 +30,7 @@ const ScrollViewUI: FunctionComponent<Props> = ({
 export const styles: {[key: string]: ViewStyle | TextStyle} = StyleSheet.create(
   {
     container: {
+      backgroundColor: 'white',
       alignItems: 'center',
       justifyContent: 'center',
       paddingHorizontal: 20,

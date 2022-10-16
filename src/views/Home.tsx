@@ -4,13 +4,7 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  TextStyle,
-  View,
-  ViewStyle,
-} from 'react-native';
+import {StyleSheet, TextStyle, View, ViewStyle} from 'react-native';
 import {Divider} from 'react-native-paper';
 import ShapesSlider from '../components/sliders/ShapesSliders';
 import SizeSlider from '../components/sliders/SizeSliders';
@@ -18,6 +12,7 @@ import {lengthRange} from '../data/LengthRangeData';
 import {shapesRange} from '../data/ShapesRangeData';
 import {thicknessRange} from '../data/ThicknessRangeData';
 import {widthRange} from '../data/WidthRangeData';
+import SafeAreaViewUI from '../ui/SafeAreaViewUI';
 import ScrollViewUI from '../ui/ScrollViewUI';
 import TextUI from '../ui/TextUI';
 import TitleUI from '../ui/TitleUI';
@@ -48,7 +43,7 @@ const Home: FunctionComponent = (): ReactElement => {
   }, [length, width, thickness, shape]);
 
   return (
-    <SafeAreaView>
+    <SafeAreaViewUI>
       <ScrollViewUI>
         <TitleUI>Surfboard Volume Calculator</TitleUI>
         <View>
@@ -79,7 +74,7 @@ const Home: FunctionComponent = (): ReactElement => {
         <Divider style={styles.line} />
         <TextUI style={styles.liters}>{volume} LITERS</TextUI>
       </ScrollViewUI>
-    </SafeAreaView>
+    </SafeAreaViewUI>
   );
 };
 
