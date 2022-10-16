@@ -1,5 +1,6 @@
 import {SizeRange} from '../types/SizeRangeTypes';
 
+// Surfboard Volume Size Calculator https://nulltuul.com/surfboard-volume-calculator/
 export const thicknessRange: SizeRange[] = [
   {feetInches: '2″', cm: 5},
   {feetInches: '2 ¼″', cm: 5.7},
