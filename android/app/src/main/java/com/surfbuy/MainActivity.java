@@ -4,10 +4,19 @@ import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 
+import android.os.Bundle;
+import org.devio.rn.splashscreen.SplashScreen;
+
 import android.content.Intent;
 import android.content.res.Configuration;
 
 public class MainActivity extends ReactActivity {
+
+  @Override
+    protected void onCreate(Bundle savedInstanceState) {
+      SplashScreen.show(this);
+      super.onCreate(savedInstanceState);
+  }
 
   @Override
   public void onConfigurationChanged(Configuration newConfig) {
