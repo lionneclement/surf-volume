@@ -68,5 +68,7 @@ buck-out/
 .env.*
 
 # Firebase 
+GoogleService-Info-Dev.plist
+GoogleService-Info-Prod.plist
 GoogleService-Info.plist
 google-services.json
