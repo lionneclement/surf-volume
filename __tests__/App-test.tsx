@@ -8,7 +8,7 @@ import App from '../App';
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
-import {volumeCalculator} from '../src/utils/VolumeCalculator';
+import {volumeCalculator} from '../app/utils/VolumeCalculator';
 
 it('renders correctly', () => {
   renderer.create(<App />);
