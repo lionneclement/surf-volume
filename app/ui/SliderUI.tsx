@@ -1,6 +1,6 @@
 import Slider, {SliderProps} from '@react-native-community/slider';
 import React, {FunctionComponent, ReactElement} from 'react';
-import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
+import {StyleSheet} from 'react-native';
 
 const trackTintColor: string = '#000000';
 
@@ -20,10 +20,11 @@ const SliderUI: FunctionComponent<SliderProps> = ({
   );
 };
 
-const styles: {[key: string]: ViewStyle | TextStyle} = StyleSheet.create({
+const styles = StyleSheet.create({
   slider: {
     width: 300,
     height: 50,
+    alignSelf: 'center',
   },
 });
 

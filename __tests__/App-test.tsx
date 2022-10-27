@@ -8,7 +8,7 @@ import App from '../App';
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
-import {volumeCalculator} from '../app/utils/VolumeCalculator';
+import {surfboardVolumeCalculator} from '../app/utils/VolumeCalculator';
 
 it('renders correctly', () => {
   renderer.create(<App />);
@@ -17,7 +17,7 @@ it('renders correctly', () => {
 describe('Should calculate the volume of a surfboard', () => {
   it('Shortboard', () => {
     expect(
-      volumeCalculator({
+      surfboardVolumeCalculator({
         length: 175.26,
         width: 50.1,
         thickness: 6.3,
@@ -28,7 +28,7 @@ describe('Should calculate the volume of a surfboard', () => {
 
   it('Hybrid/Fish', () => {
     expect(
-      volumeCalculator({
+      surfboardVolumeCalculator({
         length: 175.26,
         width: 53.9,
         thickness: 6.9,
@@ -39,7 +39,7 @@ describe('Should calculate the volume of a surfboard', () => {
 
   it('Funboard/Mal', () => {
     expect(
-      volumeCalculator({
+      surfboardVolumeCalculator({
         length: 279.4,
         width: 59.7,
         thickness: 9.5,

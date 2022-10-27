@@ -1,8 +1,10 @@
+import {NavigationContainer} from '@react-navigation/native';
 import React, {FunctionComponent, ReactElement, useEffect} from 'react';
 import Orientation from 'react-native-orientation-locker';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import SplashScreen from 'react-native-splash-screen';
-import Home from './app/views/Home';
+
+import BottomTabs from './app/navigation/BottomTabsNavigation';
 
 Orientation.lockToPortrait();
 
@@ -13,7 +15,9 @@ const App: FunctionComponent = (): ReactElement => {
 
   return (
     <SafeAreaProvider>
-      <Home />
+      <NavigationContainer>
+        <BottomTabs />
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 };

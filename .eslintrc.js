@@ -16,7 +16,6 @@ module.exports = {
           {
             allowExpressions: true,
             arrowParameter: true,
-            variableDeclaration: true,
             memberVariableDeclaration: true,
             parameter: true,
             propertyDeclaration: true,

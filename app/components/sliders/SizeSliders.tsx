@@ -6,21 +6,25 @@ import React, {
 } from 'react';
 import {View} from 'react-native';
 import {globalStyles} from '../../styles/Styles';
-import {SizeRange} from '../../types/SizeRangeTypes';
 import SliderUI from '../../ui/SliderUI';
 import TextUI from '../../ui/TextUI';
 import {sliderStyles as styles} from './SliderStyles';
 
+export interface SliderRange {
+  label: string;
+  value: number;
+}
+
 interface Props {
   title: string;
-  sizeRange: SizeRange[];
+  range: SliderRange[];
   value: number;
   setValue: Dispatch<SetStateAction<number>>;
 }
 
 const SizeSlider: FunctionComponent<Props> = ({
   title,
-  sizeRange,
+  range,
   value,
   setValue,
 }: Props): ReactElement => {
@@ -28,18 +32,16 @@ const SizeSlider: FunctionComponent<Props> = ({
     <View style={globalStyles.marginTop15}>
       <TextUI style={styles.title}>{title}</TextUI>
       <View style={styles.textContainer}>
-        <TextUI style={styles.minMaxSize}>{sizeRange[0].feetInches}</TextUI>
-        <TextUI style={styles.currentSize}>
-          {sizeRange[value].feetInches}
-        </TextUI>
+        <TextUI style={styles.minMaxSize}>{range[0].label}</TextUI>
+        <TextUI style={styles.currentSize}>{range[value].label}</TextUI>
         <TextUI style={styles.minMaxSize}>
-          {sizeRange[sizeRange.length - 1].feetInches}
+          {range[range.length - 1].label}
         </TextUI>
       </View>
       <SliderUI
         value={value}
         onValueChange={setValue}
-        maximumValue={sizeRange.length - 1}
+        maximumValue={range.length - 1}
       />
     </View>
   );

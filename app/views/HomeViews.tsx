@@ -4,19 +4,19 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import {StyleSheet, TextStyle, View, ViewStyle} from 'react-native';
-import {Divider} from 'react-native-paper';
+import {StyleSheet, View} from 'react-native';
 import ShapesSlider from '../components/sliders/ShapesSliders';
 import SizeSlider from '../components/sliders/SizeSliders';
-import {lengthRange} from '../data/LengthRangeData';
-import {shapesRange} from '../data/ShapesRangeData';
-import {thicknessRange} from '../data/ThicknessRangeData';
-import {widthRange} from '../data/WidthRangeData';
+import {lengthRange} from '../data/range/LengthRangeData';
+import {shapesRange} from '../data/range/ShapesRangeData';
+import {thicknessRange} from '../data/range/ThicknessRangeData';
+import {widthRange} from '../data/range/WidthRangeData';
+import DividerUI from '../ui/DividerUI';
 import SafeAreaViewUI from '../ui/SafeAreaViewUI';
 import ScrollViewUI from '../ui/ScrollViewUI';
 import TextUI from '../ui/TextUI';
 import TitleUI from '../ui/TitleUI';
-import {volumeCalculator} from '../utils/VolumeCalculator';
+import {surfboardVolumeCalculator} from '../utils/VolumeCalculator';
 
 // Surfboard Volume Size Calculator https://nulltuul.com/surfboard-volume-calculator/
 const Home: FunctionComponent = (): ReactElement => {
@@ -32,10 +32,10 @@ const Home: FunctionComponent = (): ReactElement => {
   const [volume, setVolume] = useState<number>(0);
 
   useEffect(() => {
-    const newVolume: number = volumeCalculator({
-      length: lengthRange[length].cm,
-      width: widthRange[width].cm,
-      thickness: thicknessRange[thickness].cm,
+    const newVolume: number = surfboardVolumeCalculator({
+      length: lengthRange[length].value,
+      width: widthRange[width].value,
+      thickness: thicknessRange[thickness].value,
       shapeValue: shapesRange[shape].value,
     });
 
@@ -49,45 +49,36 @@ const Home: FunctionComponent = (): ReactElement => {
         <View>
           <SizeSlider
             title="Length"
-            sizeRange={lengthRange}
+            range={lengthRange}
             value={length}
             setValue={setLength}
           />
           <SizeSlider
             title="Width"
-            sizeRange={widthRange}
+            range={widthRange}
             value={width}
             setValue={setWidth}
           />
           <SizeSlider
             title="Thickness"
-            sizeRange={thicknessRange}
+            range={thicknessRange}
             value={thickness}
             setValue={setThickness}
           />
-          <ShapesSlider
-            shapeRange={shapesRange}
-            setValue={setShape}
-            value={shape}
-          />
+          <ShapesSlider range={shapesRange} setValue={setShape} value={shape} />
         </View>
-        <Divider style={styles.line} />
-        <TextUI style={styles.liters}>{volume} LITERS</TextUI>
+        <DividerUI />
+        <TextUI style={styles.volume}>{volume}L</TextUI>
       </ScrollViewUI>
     </SafeAreaViewUI>
   );
 };
 
-const styles: {[key: string]: ViewStyle | TextStyle} = StyleSheet.create({
-  liters: {
+const styles = StyleSheet.create({
+  volume: {
     fontFamily: 'Jost-Medium',
     fontSize: 27,
     textAlign: 'center',
-  },
-  line: {
-    marginVertical: 20,
-    width: 300,
-    height: 1,
   },
 });
 
