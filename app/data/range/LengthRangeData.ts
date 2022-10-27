@@ -1,4 +1,4 @@
-import {SliderRange} from '../../components/sliders/SizeSliders';
+import {SliderRange} from '../../components/sliders/SliderComponent';
 
 // Surfboard Volume Size Calculator https://nulltuul.com/surfboard-volume-calculator/
 export const lengthRange: SliderRange[] = [

@@ -1,4 +1,4 @@
-import {SliderRange} from '../../components/sliders/SizeSliders';
+import {SliderRange} from '../../components/sliders/SliderComponent';
 
 export interface WeightRange extends SliderRange {
   multiple: number;

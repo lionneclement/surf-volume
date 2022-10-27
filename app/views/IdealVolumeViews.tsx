@@ -5,8 +5,7 @@ import React, {
   useState,
 } from 'react';
 import {StyleSheet} from 'react-native';
-import ShapesSlider from '../components/sliders/ShapesSliders';
-import SizeSlider from '../components/sliders/SizeSliders';
+import SliderComponent from '../components/sliders/SliderComponent';
 import {skillRange} from '../data/range/SkillRangeData';
 import {weightRange} from '../data/range/WeighRangeData';
 import DividerUI from '../ui/DividerUI';
@@ -40,13 +39,15 @@ const IdealVolume: FunctionComponent = (): ReactElement => {
         <TextUI style={styles.description}>
           Calculate your board volume based on your surfer profile.
         </TextUI>
-        <SizeSlider
+        <SliderComponent
           title="Weight (kg | pounds)"
           range={weightRange}
+          displayMiddleValue={false}
           value={weight}
           setValue={setWeight}
         />
-        <ShapesSlider
+        <SliderComponent
+          displayCurrentValue={false}
           range={skillRange}
           value={skillLevel}
           setValue={setSkillLevel}

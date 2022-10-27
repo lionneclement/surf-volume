@@ -5,8 +5,7 @@ import React, {
   useState,
 } from 'react';
 import {StyleSheet, View} from 'react-native';
-import ShapesSlider from '../components/sliders/ShapesSliders';
-import SizeSlider from '../components/sliders/SizeSliders';
+import SliderComponent from '../components/sliders/SliderComponent';
 import {lengthRange} from '../data/range/LengthRangeData';
 import {shapesRange} from '../data/range/ShapesRangeData';
 import {thicknessRange} from '../data/range/ThicknessRangeData';
@@ -47,25 +46,33 @@ const Home: FunctionComponent = (): ReactElement => {
       <ScrollViewUI>
         <TitleUI>Surfboard Volume Calculator</TitleUI>
         <View>
-          <SizeSlider
+          <SliderComponent
+            displayMiddleValue={false}
             title="Length"
             range={lengthRange}
             value={length}
             setValue={setLength}
           />
-          <SizeSlider
+          <SliderComponent
+            displayMiddleValue={false}
             title="Width"
             range={widthRange}
             value={width}
             setValue={setWidth}
           />
-          <SizeSlider
+          <SliderComponent
+            displayMiddleValue={false}
             title="Thickness"
             range={thicknessRange}
             value={thickness}
             setValue={setThickness}
           />
-          <ShapesSlider range={shapesRange} setValue={setShape} value={shape} />
+          <SliderComponent
+            range={shapesRange}
+            setValue={setShape}
+            value={shape}
+            displayCurrentValue={false}
+          />
         </View>
         <DividerUI />
         <TextUI style={styles.volume}>{volume}L</TextUI>
