@@ -1,10 +1,10 @@
 import {SliderRange} from '../../components/sliders/SizeSliders';
 
-export interface SkillRangeData extends SliderRange {
+export interface SkillRange extends SliderRange {
   pourcentage: number;
 }
 
-export const skillRange: SkillRangeData[] = [
+export const skillRange: SkillRange[] = [
   {label: 'Beginner', value: 0, pourcentage: 100},
   {label: 'Inter / Beg', value: 1, pourcentage: 50},
   {label: 'Intermediate', value: 2, pourcentage: 25},

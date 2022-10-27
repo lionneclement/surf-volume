@@ -1,4 +1,5 @@
-import {SkillRangeData} from '../data/range/SkillRangeData';
+import {SkillRange} from '../data/range/SkillRangeData';
+import {WeightRange} from '../data/range/WeighRangeData';
 
 interface Props {
   length: number;
@@ -29,20 +30,18 @@ export const idealVolumeCalculator: ({
   weight,
   skillLevel,
 }: {
-  weight: number;
-  skillLevel: SkillRangeData;
+  weight: WeightRange;
+  skillLevel: SkillRange;
 }) => number = ({
   weight,
   skillLevel,
 }: {
-  weight: number;
-  skillLevel: SkillRangeData;
+  weight: WeightRange;
+  skillLevel: SkillRange;
 }): number => {
   // https://rustysurfboards.com/pages/volume-calculator
-  const multipleRecommandation: number = 0.35;
-
   const idealVolume: number =
-    weight * multipleRecommandation * (skillLevel.pourcentage / 100 + 1);
+    weight.value * weight.multiple * (skillLevel.pourcentage / 100 + 1);
 
   return Math.round(idealVolume * 10) / 10;
 };

@@ -27,7 +27,7 @@ const IdealVolume: FunctionComponent = (): ReactElement => {
   useEffect(() => {
     setIdealVolume(
       idealVolumeCalculator({
-        weight: weightRange[weight].value,
+        weight: weightRange[weight],
         skillLevel: skillRange[skillLevel],
       }),
     );
