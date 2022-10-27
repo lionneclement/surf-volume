@@ -1,8 +1,7 @@
 import Slider, {SliderProps} from '@react-native-community/slider';
 import React, {FunctionComponent, ReactElement} from 'react';
 import {StyleSheet} from 'react-native';
-
-const trackTintColor: string = '#000000';
+import {PRIMARY_COLOR} from '../styles/Styles';
 
 const SliderUI: FunctionComponent<SliderProps> = ({
   ...props
@@ -13,8 +12,8 @@ const SliderUI: FunctionComponent<SliderProps> = ({
       step={1}
       style={styles.slider}
       minimumValue={0}
-      minimumTrackTintColor={trackTintColor}
-      maximumTrackTintColor={trackTintColor}
+      minimumTrackTintColor={PRIMARY_COLOR}
+      maximumTrackTintColor={PRIMARY_COLOR}
       {...props}
     />
   );

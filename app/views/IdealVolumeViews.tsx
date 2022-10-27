@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Jost-Medium',
     fontSize: 27,
     textAlign: 'center',
-    marginTop: 20,
   },
   description: {
     fontFamily: 'Jost-Regular',

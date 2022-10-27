@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     width: 300,
     height: 1,
+    alignSelf: 'center',
   },
 });
 
