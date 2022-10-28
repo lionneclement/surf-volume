@@ -4,6 +4,7 @@ export interface SkillRange extends SliderRange {
   pourcentage: number;
 }
 
+// https://rustysurfboards.com/pages/volume-calculator - Ideal Volume Calculator
 export const skillRange: SkillRange[] = [
   {label: 'Beginner', value: 0, pourcentage: 100},
   {label: 'Inter / Beg', value: 1, pourcentage: 50},

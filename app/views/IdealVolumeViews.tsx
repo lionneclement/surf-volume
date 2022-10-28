@@ -5,6 +5,7 @@ import React, {
   useState,
 } from 'react';
 import {StyleSheet} from 'react-native';
+import CreditComponent from '../components/CreditComponent';
 import SliderComponent from '../components/sliders/SliderComponent';
 import {skillRange} from '../data/range/SkillRangeData';
 import {weightRange} from '../data/range/WeighRangeData';
@@ -15,7 +16,7 @@ import TextUI from '../ui/TextUI';
 import TitleUI from '../ui/TitleUI';
 import {idealVolumeCalculator} from '../utils/VolumeCalculator';
 
-// Find Ideal Volume https://www.firewiresurfboards.com/pages/surfboard-volume-calculator
+// Find Ideal Volume https://rustysurfboards.com/pages/volume-calculator
 const IdealVolume: FunctionComponent = (): ReactElement => {
   const weightMiddleValue: number = Math.floor(weightRange.length / 2);
   const skillLevelMiddleValue: number = Math.floor(skillRange.length / 2);
@@ -54,6 +55,10 @@ const IdealVolume: FunctionComponent = (): ReactElement => {
         />
         <DividerUI />
         <TextUI style={styles.volume}>{idealVolume}L</TextUI>
+        <CreditComponent
+          text="By ©RustySurfboards.com"
+          url="https://rustysurfboards.com/pages/volume-calculator"
+        />
       </ScrollViewUI>
     </SafeAreaViewUI>
   );

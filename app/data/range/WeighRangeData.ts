@@ -4,6 +4,7 @@ export interface WeightRange extends SliderRange {
   multiple: number;
 }
 
+// https://rustysurfboards.com/pages/volume-calculator - Ideal Volume Calculator
 export const weightRange: WeightRange[] = [
   {label: '40 | 88', value: 40, multiple: 0.42},
   {label: '41 | 90', value: 41, multiple: 0.42},

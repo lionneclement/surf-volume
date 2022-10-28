@@ -5,6 +5,7 @@ import React, {
   useState,
 } from 'react';
 import {StyleSheet, View} from 'react-native';
+import CreditComponent from '../components/CreditComponent';
 import SliderComponent from '../components/sliders/SliderComponent';
 import {lengthRange} from '../data/range/LengthRangeData';
 import {shapesRange} from '../data/range/ShapesRangeData';
@@ -76,6 +77,10 @@ const Home: FunctionComponent = (): ReactElement => {
         </View>
         <DividerUI />
         <TextUI style={styles.volume}>{volume}L</TextUI>
+        <CreditComponent
+          text="By ©Nulltuul.com"
+          url="https://nulltuul.com/surfboard-volume-calculator/"
+        />
       </ScrollViewUI>
     </SafeAreaViewUI>
   );

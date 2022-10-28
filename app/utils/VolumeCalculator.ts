@@ -39,7 +39,7 @@ export const idealVolumeCalculator: ({
   weight: WeightRange;
   skillLevel: SkillRange;
 }): number => {
-  // https://rustysurfboards.com/pages/volume-calculator
+  // https://rustysurfboards.com/pages/volume-calculator - Ideal Volume Calculator
   const idealVolume: number =
     weight.value * weight.multiple * (skillLevel.pourcentage / 100 + 1);
 
