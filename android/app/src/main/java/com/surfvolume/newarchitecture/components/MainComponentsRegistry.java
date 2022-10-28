@@ -1,4 +1,4 @@
-package com.surfbuy.newarchitecture.components;
+package com.surfvolume.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

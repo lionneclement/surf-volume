@@ -1,16 +1,16 @@
 {
-  "name": "surfbuy",
+  "name": "SurfVolume",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "android": "react-native run-android --variant=debug",
-    "ios": "react-native run-ios --scheme 'surfbuyDevelopment'",
+    "ios": "react-native run-ios --scheme 'SurfVolumeDevelopment'",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "prepare": "husky install",
     "android:prod": "react-native run-android --variant=release",
-    "ios:prod": "react-native run-ios --scheme 'surfbuyProduction'"
+    "ios:prod": "react-native run-ios --scheme 'SurfVolumeProduction'"
   },
   "dependencies": {
     "@react-native-community/slider": "^4.3.2",

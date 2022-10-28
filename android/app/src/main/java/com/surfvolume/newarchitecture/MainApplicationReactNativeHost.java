@@ -1,4 +1,4 @@
-package com.surfbuy.newarchitecture;
+package com.surfvolume.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.surfbuy.BuildConfig;
-import com.surfbuy.newarchitecture.components.MainComponentsRegistry;
-import com.surfbuy.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.surfvolume.BuildConfig;
+import com.surfvolume.newarchitecture.components.MainComponentsRegistry;
+import com.surfvolume.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
