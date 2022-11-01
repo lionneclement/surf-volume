@@ -3,12 +3,12 @@ import {Linking, StyleSheet} from 'react-native';
 import TextUI from '../ui/TextUI';
 
 interface Props {
-  text: string;
+  creditText: string;
   url: string;
 }
 
 const CreditComponent: FunctionComponent<Props> = ({
-  text,
+  creditText,
   url,
 }: Props): ReactElement => {
   const onPressCredit = async (): Promise<void> => {
@@ -17,7 +17,7 @@ const CreditComponent: FunctionComponent<Props> = ({
 
   return (
     <TextUI onPress={onPressCredit} style={styles.credit}>
-      {text}
+      According to ©{creditText}
     </TextUI>
   );
 };

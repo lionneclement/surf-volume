@@ -78,7 +78,7 @@ const Home: FunctionComponent = (): ReactElement => {
         <DividerUI />
         <TextUI style={styles.volume}>{volume}L</TextUI>
         <CreditComponent
-          text="By ©Nulltuul.com"
+          creditText="Nulltuul.com"
           url="https://nulltuul.com/surfboard-volume-calculator/"
         />
       </ScrollViewUI>

@@ -56,7 +56,7 @@ const IdealVolume: FunctionComponent = (): ReactElement => {
         <DividerUI />
         <TextUI style={styles.volume}>{idealVolume}L</TextUI>
         <CreditComponent
-          text="By ©RustySurfboards.com"
+          creditText="RustySurfboards.com"
           url="https://rustysurfboards.com/pages/volume-calculator"
         />
       </ScrollViewUI>
