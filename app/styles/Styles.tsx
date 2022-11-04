@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-export const PRIMARY_COLOR = '#0088FF';
+export const PRIMARY_COLOR = '#0075DB';
 
 export const globalStyles = StyleSheet.create({
   marginTop15: {

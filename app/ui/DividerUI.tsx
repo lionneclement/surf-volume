@@ -1,9 +1,12 @@
 import React, {FunctionComponent, ReactElement} from 'react';
 import {StyleSheet} from 'react-native';
-import {Divider} from 'react-native-paper';
+import {Divider, DividerProps} from 'react-native-paper';
 
-const DividerUI: FunctionComponent = (): ReactElement => {
-  return <Divider style={styles.line} />;
+const DividerUI: FunctionComponent<DividerProps> = ({
+  style,
+  ...props
+}: DividerProps): ReactElement => {
+  return <Divider style={[styles.line, style]} {...props} />;
 };
 
 const styles = StyleSheet.create({

@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from 'react';
-import {StyleSheet, View, ViewStyle} from 'react-native';
+import {StyleSheet, TextStyle, View, ViewStyle} from 'react-native';
 import RNPickerSelect, {PickerSelectProps} from 'react-native-picker-select';
 import TextUI from './TextUI';
 
@@ -13,14 +13,16 @@ const PickerUi: FunctionComponent<Props> = ({
   containerStyle,
   items,
   title,
-
+  style: PickerStyle,
   ...props
 }: Props) => {
   return (
     <View style={containerStyle}>
       <TextUI style={styles.title}>{title}</TextUI>
       <RNPickerSelect
-        style={{inputIOS: styles.picker}}
+        style={{
+          inputIOS: (styles.picker as TextStyle, PickerStyle?.inputIOS),
+        }}
         items={items}
         {...props}
       />

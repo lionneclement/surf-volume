@@ -7,10 +7,11 @@ interface Props extends TextProps {
 
 const TextUI: FunctionComponent<Props> = ({
   children,
+  style,
   ...props
 }: Props): ReactElement => {
   return (
-    <Text style={styles.text} {...props}>
+    <Text style={[styles.text, style]} {...props}>
       {children}
     </Text>
   );
