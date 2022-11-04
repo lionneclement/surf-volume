@@ -1,20 +1,20 @@
 import React, {FunctionComponent, ReactElement} from 'react';
-import {StyleSheet} from 'react-native';
-import {Divider, DividerProps} from 'react-native-paper';
+import {StyleSheet, View, ViewProps} from 'react-native';
 
-const DividerUI: FunctionComponent<DividerProps> = ({
+const DividerUI: FunctionComponent<ViewProps> = ({
   style,
   ...props
-}: DividerProps): ReactElement => {
-  return <Divider style={[styles.line, style]} {...props} />;
+}: ViewProps): ReactElement => {
+  return <View style={[styles.divider, style]} {...props} />;
 };
 
 const styles = StyleSheet.create({
-  line: {
+  divider: {
     marginVertical: 20,
     width: 300,
-    height: 1,
     alignSelf: 'center',
+    borderBottomColor: 'black',
+    borderBottomWidth: StyleSheet.hairlineWidth,
   },
 });
 
