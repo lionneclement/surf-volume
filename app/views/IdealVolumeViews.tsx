@@ -41,11 +41,13 @@ const IdealVolume: FunctionComponent = (): ReactElement => {
           Calculate your board volume based on your surfer profile.
         </TextUI>
         <SliderComponent
-          title="Weight (kg | pounds)"
+          title="Weight"
           range={weightRange}
           displayMiddleValue={false}
           value={weight}
           setValue={setWeight}
+          displayMaxValue={false}
+          displayMinValue={false}
         />
         <SliderComponent
           displayCurrentValue={false}

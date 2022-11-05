@@ -8,11 +8,12 @@ interface Props extends SafeAreaViewProps {
 
 const SafeAreaViewUI: FunctionComponent<Props> = ({
   children,
+  style,
   ...props
 }: Props): ReactElement => {
   return (
     <SafeAreaView
-      style={styles.container}
+      style={[styles.container, style]}
       edges={['top', 'right', 'bottom', 'left']}
       {...props}>
       {children}
