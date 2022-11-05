@@ -18,6 +18,8 @@ interface Props {
   title?: string;
   displayCurrentValue?: boolean;
   displayMiddleValue?: boolean;
+  displayMaxValue?: boolean;
+  displayMinValue?: boolean;
   range: SliderRange[];
   value: number;
   setValue: Dispatch<SetStateAction<number>>;
@@ -27,6 +29,8 @@ const SliderComponent: FunctionComponent<Props> = ({
   title,
   displayCurrentValue = true,
   displayMiddleValue = true,
+  displayMaxValue = true,
+  displayMinValue = true,
   range,
   value,
   setValue,
@@ -35,13 +39,17 @@ const SliderComponent: FunctionComponent<Props> = ({
     <View style={globalStyles.marginTop15}>
       {title && <TextUI style={styles.title}>{title}</TextUI>}
       <View style={styles.textContainer}>
-        <TextUI style={styles.minMaxSize}>{range[0].label}</TextUI>
+        {displayMinValue && (
+          <TextUI style={styles.minMaxSize}>{range[0].label}</TextUI>
+        )}
         {displayCurrentValue && (
           <TextUI style={styles.currentSize}>{range[value].label}</TextUI>
         )}
-        <TextUI style={styles.minMaxSize}>
-          {range[range.length - 1].label}
-        </TextUI>
+        {displayMaxValue && (
+          <TextUI style={styles.minMaxSize}>
+            {range[range.length - 1].label}
+          </TextUI>
+        )}
       </View>
       <SliderUI
         value={value}
@@ -65,13 +73,16 @@ const styles = StyleSheet.create({
   textContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   minMaxSize: {
     fontSize: 18,
   },
   currentSize: {
+    flex: 1,
     fontSize: 26,
     fontFamily: 'Jost-Medium',
+    textAlign: 'center',
   },
 });
 
