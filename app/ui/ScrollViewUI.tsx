@@ -7,12 +7,13 @@ interface Props extends ScrollViewProps {
 
 const ScrollViewUI: FunctionComponent<Props> = ({
   children,
+  style,
   ...props
 }: Props): ReactElement => {
   return (
     <ScrollView
       bounces={false}
-      contentContainerStyle={styles.container}
+      contentContainerStyle={[styles.container, style]}
       showsHorizontalScrollIndicator={false}
       showsVerticalScrollIndicator={false}
       {...props}>
