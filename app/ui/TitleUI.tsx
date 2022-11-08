@@ -1,5 +1,6 @@
 import {FunctionComponent, ReactElement, ReactNode} from 'react';
 import React, {StyleSheet, TextProps} from 'react-native';
+import {RFValue} from 'react-native-responsive-fontsize';
 import TextUI from './TextUI';
 
 interface Props extends TextProps {
@@ -21,9 +22,9 @@ const TitleUI: FunctionComponent<Props> = ({
 const styles = StyleSheet.create({
   title: {
     fontFamily: 'Jost-Medium',
-    fontSize: 35,
+    fontSize: 29,
     textAlign: 'center',
-    lineHeight: 40,
+    lineHeight: RFValue(35),
   },
 });
 

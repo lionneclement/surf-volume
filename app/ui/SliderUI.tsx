@@ -1,6 +1,7 @@
 import Slider, {SliderProps} from '@react-native-community/slider';
 import React, {FunctionComponent, ReactElement} from 'react';
 import {StyleSheet} from 'react-native';
+import {RFValue} from 'react-native-responsive-fontsize';
 import {PRIMARY_COLOR} from '../styles/Styles';
 
 const SliderUI: FunctionComponent<SliderProps> = ({
@@ -23,7 +24,7 @@ const SliderUI: FunctionComponent<SliderProps> = ({
 const styles = StyleSheet.create({
   slider: {
     width: 300,
-    height: 50,
+    height: RFValue(34),
     alignSelf: 'center',
   },
 });
