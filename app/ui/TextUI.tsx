@@ -1,5 +1,6 @@
 import React, {FunctionComponent, ReactElement, ReactNode} from 'react';
 import {StyleSheet, Text, TextProps} from 'react-native';
+import {RFValue} from 'react-native-responsive-fontsize';
 
 interface Props extends TextProps {
   children: ReactNode;
@@ -10,8 +11,12 @@ const TextUI: FunctionComponent<Props> = ({
   style,
   ...props
 }: Props): ReactElement => {
+  const fontSize = StyleSheet.flatten(style)?.fontSize || 12;
+
   return (
-    <Text style={[styles.text, style]} {...props}>
+    <Text
+      style={[styles.text, style, {fontSize: RFValue(fontSize)}]}
+      {...props}>
       {children}
     </Text>
   );
