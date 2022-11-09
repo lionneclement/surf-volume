@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
   credit: {
     marginTop: 10,
     fontFamily: 'Jost-Medium',
-    fontSize: 12,
+    fontSize: 11,
   },
 });
 

@@ -21,7 +21,7 @@ module.exports = {
             propertyDeclaration: true,
           },
         ],
-        curly: ['warn', 'multi-or-nest'],
+        curly: ['warn', 'multi-line'],
       },
     },
   ],

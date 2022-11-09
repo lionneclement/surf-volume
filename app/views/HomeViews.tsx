@@ -45,7 +45,7 @@ const Home: FunctionComponent = (): ReactElement => {
   return (
     <SafeAreaViewUI>
       <ScrollViewUI>
-        <TitleUI>Surfboard Volume Calculator</TitleUI>
+        <TitleUI>{'Surfboard Volume\nCalculator'}</TitleUI>
         <View>
           <SliderComponent
             displayMiddleValue={false}
@@ -89,7 +89,7 @@ const Home: FunctionComponent = (): ReactElement => {
 const styles = StyleSheet.create({
   volume: {
     fontFamily: 'Jost-Medium',
-    fontSize: 27,
+    fontSize: 23,
     textAlign: 'center',
   },
 });

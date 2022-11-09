@@ -36,7 +36,7 @@ const IdealVolume: FunctionComponent = (): ReactElement => {
   return (
     <SafeAreaViewUI>
       <ScrollViewUI>
-        <TitleUI>Ideal Volume Calculator</TitleUI>
+        <TitleUI>{'Ideal Volume\nCalculator'}</TitleUI>
         <TextUI style={styles.description}>
           Calculate your board volume based on your surfer profile.
         </TextUI>
@@ -69,12 +69,12 @@ const IdealVolume: FunctionComponent = (): ReactElement => {
 const styles = StyleSheet.create({
   volume: {
     fontFamily: 'Jost-Medium',
-    fontSize: 27,
+    fontSize: 23,
     textAlign: 'center',
   },
   description: {
     fontFamily: 'Jost-Regular',
-    fontSize: 16,
+    fontSize: 14,
     textAlign: 'center',
     marginBottom: 10,
   },

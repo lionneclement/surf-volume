@@ -68,7 +68,7 @@ const SliderComponent: FunctionComponent<Props> = ({
 const styles = StyleSheet.create({
   title: {
     fontFamily: 'Jost-Bold',
-    fontSize: 21,
+    fontSize: 18,
   },
   textContainer: {
     flexDirection: 'row',
@@ -76,11 +76,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   minMaxSize: {
-    fontSize: 18,
+    fontSize: 15,
   },
   currentSize: {
     flex: 1,
-    fontSize: 26,
+    fontSize: 22,
     fontFamily: 'Jost-Medium',
     textAlign: 'center',
   },
