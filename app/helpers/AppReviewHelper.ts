@@ -12,15 +12,18 @@ export const showAppReview = async (): Promise<void> => {
 
   numberOfSessions = numberOfSessions || '0';
 
+  let nextNumberOfSessions = parseInt(numberOfSessions, 10) + 1;
+
   if (
     numberOfSessions === NUMBER_OF_SESSIONS_TO_SHOW_APP_REVIEW.toString() &&
     appReviewIsAvailable()
   ) {
-    await requestAppReview();
+    const hasFlowFinishedSuccessfully = await requestAppReview();
+    if (!hasFlowFinishedSuccessfully) nextNumberOfSessions = 0;
   }
 
   setAsyncStorageItem(
     NUMBER_OF_SESSIONS_TO_SHOW_APP_REVIEW_KEY,
-    (parseInt(numberOfSessions, 10) + 1).toString(),
+    nextNumberOfSessions.toString(),
   );
 };
