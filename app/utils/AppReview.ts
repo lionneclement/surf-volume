@@ -3,10 +3,13 @@ import {logError} from './LogError';
 
 export const appReviewIsAvailable = (): boolean => InAppReview.isAvailable();
 
-export const requestAppReview = async (): Promise<void> => {
+export const requestAppReview = async (): Promise<boolean> => {
+  let hasFlowFinishedSuccessfully = false;
   try {
-    await InAppReview.RequestInAppReview();
+    hasFlowFinishedSuccessfully = await InAppReview.RequestInAppReview();
   } catch (error: any) {
     logError(error);
   }
+
+  return hasFlowFinishedSuccessfully;
 };

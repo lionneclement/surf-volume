@@ -11,6 +11,7 @@ import {lengthRange} from '../data/range/LengthRangeData';
 import {shapesRange} from '../data/range/ShapesRangeData';
 import {thicknessRange} from '../data/range/ThicknessRangeData';
 import {widthRange} from '../data/range/WidthRangeData';
+import {showAppReview} from '../helpers/AppReviewHelper';
 import DividerUI from '../ui/DividerUI';
 import SafeAreaViewUI from '../ui/SafeAreaViewUI';
 import ScrollViewUI from '../ui/ScrollViewUI';
@@ -30,6 +31,7 @@ const Home: FunctionComponent = (): ReactElement => {
   const [thickness, setThickness] = useState<number>(thicknessMiddleValue);
   const [shape, setShape] = useState<number>(shapesMiddleValue);
   const [volume, setVolume] = useState<number>(0);
+  const [alreadyRated, setAlreadyRated] = useState<boolean>(false);
 
   useEffect(() => {
     const newVolume: number = surfboardVolumeCalculator({
@@ -41,6 +43,16 @@ const Home: FunctionComponent = (): ReactElement => {
 
     setVolume(newVolume);
   }, [length, width, thickness, shape]);
+
+  useEffect(() => {
+    if (
+      (length !== lengthMiddleValue || width !== widthMiddleValue) &&
+      !alreadyRated
+    ) {
+      setAlreadyRated(true);
+      showAppReview();
+    }
+  }, [length, lengthMiddleValue, width, widthMiddleValue, alreadyRated]);
 
   return (
     <SafeAreaViewUI>
